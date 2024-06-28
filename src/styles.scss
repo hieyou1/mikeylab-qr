@@ -1,4 +1,14 @@
 @import "bootstrap/scss/bootstrap";
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+    }
+    #qr {
+        background-color: white;
+    }
+}
+
 html,
 body {
     width: 100%;
