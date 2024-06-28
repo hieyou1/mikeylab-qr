@@ -62,25 +62,29 @@ const updateQR = () => {
 window.onload = async () => {
     window.onkeydown = (e: KeyboardEvent) => {
         if (!e.ctrlKey && !e.metaKey) return;
-        e.preventDefault();
         switch (e.key) {
             case "s": {
+                e.preventDefault();
                 (document.querySelector("#toggle-svg") as HTMLInputElement).checked = true;
                 break;
             }
             case "p": {
+                e.preventDefault();
                 (document.querySelector("#toggle-png") as HTMLInputElement).checked = true;
                 break;
             }
             case "j": {
+                e.preventDefault();
                 (document.querySelector("#toggle-jpg") as HTMLInputElement).checked = true;
                 break;
             }
             case "d": {
+                e.preventDefault();
                 download();
                 break;
             }
             case "c": {
+                e.preventDefault();
                 copy();
                 break;
             }
