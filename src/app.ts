@@ -26,11 +26,13 @@ const getFile: () => Promise<Blob> = async () => {
     return file;
 };
 const download = async () => {
+    let type = getType();
     let file = await getFile();
     let url = URL.createObjectURL(file);
 
     let a = document.createElement("a");
     a.href = url;
+    a.download = "qr." + ((type == "jpeg") ? "jpg" : type);
     a.click();
 
     URL.revokeObjectURL(url);
