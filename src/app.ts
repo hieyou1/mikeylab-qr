@@ -60,7 +60,7 @@ const updateQR = () => {
     (document.querySelector("#qr") as SVGElement).outerHTML = elem.outerHTML;
 };
 window.onload = async () => {
-    window.onkeyup = (e: KeyboardEvent) => {
+    window.onkeydown = (e: KeyboardEvent) => {
         if (!e.ctrlKey && !e.metaKey) return;
         e.preventDefault();
         switch (e.key) {
