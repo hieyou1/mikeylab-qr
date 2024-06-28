@@ -61,6 +61,8 @@ const updateQR = () => {
 };
 window.onload = async () => {
     window.onkeyup = (e: KeyboardEvent) => {
+        if (!e.ctrlKey && !e.metaKey) return;
+        e.preventDefault();
         switch (e.key) {
             case "s": {
                 (document.querySelector("#toggle-svg") as HTMLInputElement).checked = true;
