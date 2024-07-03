@@ -5,6 +5,8 @@
         "build": "webpack"
     },
     "devDependencies": {
+        "@types/bootstrap": "^5.2.10",
+        "@typescript/lib-dom": "npm:@types/web@^0.0.150",
         "autoprefixer": "^10.4.19",
         "bootstrap": "^5.3.3",
         "canvg": "^4.0.2",

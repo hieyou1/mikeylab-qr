@@ -6,7 +6,8 @@ const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     mode: "production",
     entry: {
-        'app': './src/app.ts'
+        'app': './src/app.ts',
+        'settings': './src/settings.ts'
     },
     devtool: 'inline-source-map',
     module: {
@@ -53,8 +54,22 @@ module.exports = {
         filename: '[name].js',
         path: path.resolve(__dirname, '.')
     },
+    performance: {
+        assetFilter: () => {
+            return false;
+        }
+    },
     plugins: [
-        new HtmlWebpackPlugin({ template: './src/index.html' }),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            filename: 'index.html',
+            chunks: ['app']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/settings.html',
+            filename: 'settings.html',
+            chunks: ['settings']
+        }),
         new MiniCSSExtractPlugin()
     ],
     devServer: {
